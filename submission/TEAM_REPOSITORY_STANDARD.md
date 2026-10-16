@@ -34,3 +34,7 @@ Maintain D1–D12/AC1–AC12/DT1–DT10 evidence index with owner, distinct revi
 - **D11 Controlled campaign pilot brief:** deliverables/controlled-campaign-pilot-brief.pdf plus editable slides and supporting cards/runbook.
 
 Index these under SC1–SC5 with author, distinct reviewer, executed result and final commit. Treat these paths as the default delivery contract; an equivalent tool-specific format requires an explicit documented mapping.
+
+## Team organisation
+
+The recommended team size is **3–5 people**. Delivery roles describe responsibilities, not separate positions: members can combine complementary business analysis, governance, engineering, analysis/modelling, BI and domain responsibilities. Assign a named owner to each deliverable and use a different team member to review critical calculations and perform the final clean rerun.

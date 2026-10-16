@@ -2,7 +2,7 @@
 
 This is a simulated confidential-client engagement using public/open data. Stakeholders and commercial/security scenarios are fictional. Do not claim real-client employment, endorsement, operational deployment or realised benefits. This master pack specifies work to be completed; it does not claim the team has executed it.
 
-**Client:** Confidential Retail Bank · **Sponsor:** Head of Retail Banking Marketing · **Team:** 6–8 · **Duration:** 8 weeks · **Cycle:** outbound campaign planning review
+**Client:** Confidential Retail Bank · **Sponsor:** Head of Retail Banking Marketing · **Team:** 3–5 · **Duration:** 8 weeks · **Cycle:** outbound campaign planning review
 
 ## Problem and commission
 
@@ -80,3 +80,7 @@ Deliver D1–D12, K1–K7, AC1–AC12, ten executed domain tests, three UAT task
 | G4 release | Week 8 | Simulated Mettelo panel and Marketing Model Assurance Analyst accept D1–D12, AC1–AC12, ten executed tests, three UAT tasks and clean rerun with zero critical/high defects. |
 
 [Deliverables](DELIVERABLES.md), [acceptance](ACCEPTANCE_CRITERIA.md), [data register](../data/SOURCE_REGISTER.md).
+
+## Team organisation
+
+The recommended team size is **3–5 people**. Delivery roles describe responsibilities, not separate positions: members can combine complementary business analysis, governance, engineering, analysis/modelling, BI and domain responsibilities. Assign a named owner to each deliverable and use a different team member to review critical calculations and perform the final clean rerun.
