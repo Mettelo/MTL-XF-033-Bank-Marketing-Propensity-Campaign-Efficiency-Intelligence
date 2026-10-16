@@ -6,9 +6,33 @@ This is a simulated confidential-client engagement using public/open data. Stake
 
 ## Problem and commission
 
-A bank's outbound team has a fixed contact capacity but relies on broad lists. Historical subscription patterns may improve prioritisation, yet call duration is only known after a call and historical targeting does not establish the effect of contacting a customer.
+The outbound campaign manager can contact only one fifth of the eligible list in the planning scenario. Selecting customers by a broad demographic profile may waste calls, but selecting on completed-call duration would make a pre-call model look useful using information the caller does not yet know. The bank needs a comparison of contact lists at the same capacity and a transparent view of response concentration, customer contact burden and assumed economics.
 
 > Compare capacity-limited contact lists and design a controlled term-deposit campaign pilot.
+
+## Practical use case and business outputs
+
+Before a term-deposit campaign, marketing compares a fixed random 20% list with a model-ranked 20% list, reviews expected historical response capture and cost scenarios, and approves a consent-screened randomised pilot rather than deploying historical propensity as proven uplift.
+
+| Deliverable | What the team must hand over | Required contents |
+| --- | --- | --- |
+| D5 | Campaign population and contact scorecard | Response counts/rate, campaign contact distribution, previous-contact coverage and unknown-category counts; source-row identity and approved chronological partition. |
+| D6 | Pre-contact propensity evaluation | Majority/rate baseline and interpretable candidate model; explicit feature-availability audit; precision/recall/lift at 20% test capacity and uncertainty. |
+| D7 | Equal-capacity campaign and economics comparison | Random seed-33 list and ranked list, each floor(0.2×N) test records; subscriptions per 1,000 selected contacts and nine stated cost/value scenarios. |
+| D8 | Campaign planning dashboard | List-capacity comparison, response capture, contact-burden diagnostics and model/source limitations. |
+| D11 | Controlled campaign pilot brief | Pilot arms, eligibility/consent checks, contact-frequency guardrail, randomisation unit, outcome window, sample-size assumptions and stop/review rules. |
+
+## Required success contract
+
+| Success ID | Required deliverable | Specific pass condition |
+| --- | --- | --- |
+| SC1 | D5 — Campaign population and contact scorecard | All 45,211 source records accounted for; y=yes is positive; pdays=−1 means no previous contact; repeated records are not claimed to be unique customers. |
+| SC2 | D6 — Pre-contact propensity evaluation | duration and y never enter predictors; completed last-contact fields excluded from core as specified; no test tuning; report class counts and baseline underperformance. |
+| SC3 | D7 — Equal-capacity campaign and economics comparison | Both lists use identical eligible records/capacity; ties use source ID; net-value arithmetic is reproducible and labelled assumed historical response economics, not incremental profit. |
+| SC4 | D8 — Campaign planning dashboard | Reviewer changes cost/value assumptions, verifies selected count remains fixed, and traces one selected/deferred case without exposing unnecessary personal fields. |
+| SC5 | D11 — Controlled campaign pilot brief | Pilot distinguishes propensity from causal uplift; specifies actual customer IDs and consent evidence needed before operation; no live contact or sales claim. |
+
+[Detailed acceptance](ACCEPTANCE_CRITERIA.md) defines executed evidence; [deliverables](DELIVERABLES.md) defines exact artefacts and ownership. G1 records simulated sponsor approval, not invented real-client agreement.
 
 ## Core scope
 

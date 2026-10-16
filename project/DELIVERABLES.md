@@ -36,37 +36,57 @@ Profile types, nulls, duplicates, sentinels, labels, units and source support. A
 
 **Pass evidence:** Every treatment has affected count, reason, owner and reviewer; no silent row loss or coercion.
 
-## D5 — KPI catalogue and lineage
+## D5 — Campaign population and contact scorecard
 
-**Due:** Week 4 · **Owner:** Campaign Strategy Analyst · **Team location:** docs/05-kpi-catalogue/
+**Due:** Week 4 · **Owner:** Campaign Strategy Analyst · **Business reviewer:** Head of Retail Banking Marketing · **Independent reviewer:** Marketing Model Assurance Analyst
 
-Implement K1–K7 below with actual source fields, code, valid population, denominator, units, grain, exclusions, owner and worked examples.
+**Required artefact:** data/curated/campaign-population-and-contact-scorecard.csv and docs/05-kpi-catalogue/campaign-population-and-contact-scorecard.md.
 
-**Pass evidence:** All seven reviewed; K1–K5 reconcile independently and in BI on full cohort and one filtered slice.
+Response counts/rate, campaign contact distribution, previous-contact coverage and unknown-category counts; source-row identity and approved chronological partition.
 
-## D6 — Analysis and evaluation
+**Mandatory pass condition (SC1):** All 45,211 source records accounted for; y=yes is positive; pdays=−1 means no previous contact; repeated records are not claimed to be unique customers.
 
-**Due:** Week 6 · **Owner:** Data Scientist / Decision Modelling Analyst · **Team location:** docs/06-analysis/
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
 
-Use first 60%, next 20%, last 20% in published record order, documenting that exact dates and repeated customers cannot be verified. Preserve order; train-only transforms; exclude duration and y. Treat contact/day/month/campaign as planned-context features only with explicit timing assumptions. Core pre-contact model also excludes contact, day, month and campaign unless separately evaluated as a labelled planned-contact scenario; this avoids treating the completed last contact as known before selection.
 
-**Pass evidence:** Baseline and alternative results, population/class counts, uncertainty, negative findings and feature/timing audit retained; no test-driven tuning.
+## D6 — Pre-contact propensity evaluation
 
-## D7 — Decision policy and action register
+**Due:** Week 6 · **Owner:** Data Scientist / Decision Modelling Analyst · **Business reviewer:** Head of Retail Banking Marketing · **Independent reviewer:** Marketing Model Assurance Analyst
 
-**Due:** Week 6 · **Owner:** Campaign Strategy Analyst · **Team location:** docs/07-decision-framework/
+**Required artefact:** docs/06-analysis/pre-contact-propensity-evaluation.md plus machine-readable evaluation_results.csv.
 
-Baseline selects a deterministic random 20% contact list (seed 33). Alternative selects top-scored 20% using a validation-selected model and locked tie rule. Evaluate subscriptions per 1,000 attempted contacts and assumed net value under £1/£3/£5 contact costs and £20/£50/£100 subscription value; all amounts are simulation assumptions.
+Majority/rate baseline and interpretable candidate model; explicit feature-availability audit; precision/recall/lift at 20% test capacity and uncertainty.
 
-**Pass evidence:** Both policies and sensitivity outputs supplied; every action has evidence, eligibility, owner, next review and uncertainty. Include a defer case.
+**Mandatory pass condition (SC2):** duration and y never enter predictors; completed last-contact fields excluded from core as specified; no test tuning; report class counts and baseline underperformance.
 
-## D8 — Dashboard / decision prototype
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
 
-**Due:** Week 7 · **Owner:** BI / Decision Product Developer · **Team location:** dashboard/
 
-Four linked views: K1–K7 executive overview, source-supported diagnostics, policy/action comparison and quality/limitations for Head of Retail Banking Marketing.
+## D7 — Equal-capacity campaign and economics comparison
 
-**Pass evidence:** Five metric/filter checks pass; frozen scope and limitations survive export; static copy/user guide require no paid access.
+**Due:** Week 6 · **Owner:** Campaign Strategy Analyst · **Business reviewer:** Head of Retail Banking Marketing · **Independent reviewer:** Marketing Model Assurance Analyst
+
+**Required artefact:** docs/07-decision-framework/equal-capacity-campaign-and-economics-comparison.csv plus policy.md.
+
+Random seed-33 list and ranked list, each floor(0.2×N) test records; subscriptions per 1,000 selected contacts and nine stated cost/value scenarios.
+
+**Mandatory pass condition (SC3):** Both lists use identical eligible records/capacity; ties use source ID; net-value arithmetic is reproducible and labelled assumed historical response economics, not incremental profit.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
+
+## D8 — Campaign planning dashboard
+
+**Due:** Week 7 · **Owner:** BI / Decision Product Developer · **Business reviewer:** Head of Retail Banking Marketing · **Independent reviewer:** Marketing Model Assurance Analyst
+
+**Required artefact:** dashboard/README.md, runnable dashboard/prototype and static review export.
+
+List-capacity comparison, response capture, contact-burden diagnostics and model/source limitations.
+
+**Mandatory pass condition (SC4):** Reviewer changes cost/value assumptions, verifies selected count remains fixed, and traces one selected/deferred case without exposing unnecessary personal fields.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
 
 ## D9 — Independent assurance and UAT
 
@@ -84,13 +104,18 @@ One documented run entry point, dependency versions, manifest, output checksums/
 
 **Pass evidence:** Second member reproduces all seven KPIs and policy queue from approved bytes; environment, elapsed time and discrepancies recorded.
 
-## D11 — Executive recommendation
+## D11 — Controlled campaign pilot brief
 
-**Due:** Week 8 · **Owner:** Delivery Lead + domain specialist · **Team location:** deliverables/
+**Due:** Week 8 · **Owner:** Business Analyst / Delivery Lead with domain specialist · **Business reviewer:** Head of Retail Banking Marketing · **Independent reviewer:** Marketing Model Assurance Analyst
 
-8–12 slides and a 5–10-minute demo answering Compare capacity-limited contact lists and design a controlled term-deposit campaign pilot. Include five evidence-linked findings, three next actions, comparison and a defer case.
+**Required artefact:** deliverables/controlled-campaign-pilot-brief.pdf plus editable slides and supporting cards/runbook.
 
-**Pass evidence:** Every numeric claim links tested evidence; costs/benefits and operational targets are labelled assumptions unless measured.
+Pilot arms, eligibility/consent checks, contact-frequency guardrail, randomisation unit, outcome window, sample-size assumptions and stop/review rules.
+
+**Mandatory pass condition (SC5):** Pilot distinguishes propensity from causal uplift; specifies actual customer IDs and consent evidence needed before operation; no live contact or sales claim.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
 
 ## D12 — Contribution and final submission
 

@@ -24,3 +24,13 @@ Assign named people to all seven [brief roles](../project/PROJECT_BRIEF.md). Eve
 Write the contact-capacity policy and a randomised pilot design with consent screening, contact-frequency guardrails and subscription outcome window.
 
 Maintain D1–D12/AC1–AC12/DT1–DT10 evidence index with owner, distinct reviewer, state and final-commit path. Connect numeric claims to frozen source and code/configuration. Record all manual adjustments, excluded cases and limitations; preserve an insufficient-evidence case.
+
+## Required business-output artefacts
+
+- **D5 Campaign population and contact scorecard:** data/curated/campaign-population-and-contact-scorecard.csv and docs/05-kpi-catalogue/campaign-population-and-contact-scorecard.md.
+- **D6 Pre-contact propensity evaluation:** docs/06-analysis/pre-contact-propensity-evaluation.md plus machine-readable evaluation_results.csv.
+- **D7 Equal-capacity campaign and economics comparison:** docs/07-decision-framework/equal-capacity-campaign-and-economics-comparison.csv plus policy.md.
+- **D8 Campaign planning dashboard:** dashboard/README.md, runnable dashboard/prototype and static review export.
+- **D11 Controlled campaign pilot brief:** deliverables/controlled-campaign-pilot-brief.pdf plus editable slides and supporting cards/runbook.
+
+Index these under SC1–SC5 with author, distinct reviewer, executed result and final commit. Treat these paths as the default delivery contract; an equivalent tool-specific format requires an explicit documented mapping.
